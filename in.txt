@@ -1,0 +1,15 @@
+main: 
+	addi $sp, $sp, -16 
+	sw $ra, 0($sp) 
+	sw $s0, 4($sp) 
+	sw $s1, 8($sp) 
+	sw $s2, 12($sp) 
+	la $a0, firstMatrix 
+	jal print_matrix 
+	jal print_new_line 
+	la $a0, secondMatrix 
+	jal print_matrix 
+	la $a0, firstMatrix 
+	la $a1, secondMatrix 
+	la $a2, newMatrix 
+	jal matrix_mult
